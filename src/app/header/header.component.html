@@ -9,3 +9,14 @@
 <h2>Two Way Binding<h2>
 <input type="text" [(ngModel)]="channelWebsite">
 <p>{{ channelWebsite }}</p>
+<div [ngStyle] ="{backgroundColor: getcolor()}" [ngClass]="{custom:getPermission()}" style="width: 300px;height: 200px;">
+    <button (click)="AddChannelMember()">Add</button>
+    <p *ngIf="IsMemberAdded ; else nomember">Channel Member Added Sucessfully!</p>
+    <ng-template #nomember>
+        <p>No Member Added!</p>
+    </ng-template>
+</div>
+<h3>For Loop in Angular</h3>
+<div *ngFor = "let Product of Channels">
+    <p>{{Product}}</p>
+</div>

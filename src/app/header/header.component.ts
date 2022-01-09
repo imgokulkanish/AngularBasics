@@ -3,7 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styles: [ `.custom{
+                color:white;
+                padding:40px;
+    }
+    `]
 })
 export class HeaderComponent implements OnInit {
 
@@ -14,8 +18,21 @@ export class HeaderComponent implements OnInit {
   channelActive: boolean = false;
   //Event Binding
   channelMember: number = 2;
+  //directives-ngif
+ IsMemberAdded: boolean = false;
+ //ngfor
+ Channels: any = ["Kirikettu","UnpopularCricket","CricMania"];
   AddChannelMember(){
     this.channelMember++;
+    this.IsMemberAdded = true;
+ }
+ //ngstyle
+ getcolor(){
+   return this.IsMemberAdded ? 'green' : 'red' ;
+ }
+ //ngclass
+ getPermission(){
+   return this.IsMemberAdded;
  }
  //Event Binding with Parameter
 
