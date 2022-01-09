@@ -1,1 +1,11 @@
-<h1>Channel ID is {{channelId}} and Channel Name is {{channelName}}</h1>
+<h1>Unpopular Cricket</h1>
+<p>Channel ID is {{channelId}} and Channel Name is {{channelName}}</p>
+<p [innerText]="channelActive"></p>
+<button (click)="AddChannelMember()">Add Score</button>
+<p>{{channelMember}}</p>
+
+<input type="text" (input)="inputEvent($event)">
+<!-- <p>{{inputEvent}}</p> -->
+<h2>Two Way Binding<h2>
+<input type="text" [(ngModel)]="channelWebsite">
+<p>{{ channelWebsite }}</p>
